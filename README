@@ -1,0 +1,24 @@
+MODO DE USAR
+
+Executar o server.py para rodar o servidor na máquina desejada. O terminal.py é um console para controlar o servidor. serverparser.py é o arquivo que contém quase todas as rotinas do servidor.
+
+Cada arquivo está conforme o passo da lição pelo tutorial, sendo a 05 a versão final, com comentários que podem ajudar melhor na compreensão.
+
+
+SERVIDOR
+
+O servidor ainda precisa melhorar muito quando ao código e funcionalidades. Além de brechas de segurança, o sistema de monstros está terrível - eles não perseguem ninguém e possuem alguns bugs ainda misteriosos. Na realidade, para um mmorpg melhor, o sistema de passar eventos da pygame deveria ser trocado para um formato de transmissão mínima de dados e utilizar orientação a objetos, o que foi evitado no cliente para permitir que mesmo quem não saiba orientação possa fazer o tutorial. 
+
+O funcionamento básico do servidor gira em torno de três threads:
+
+1) Monstermove - realiza movimentação de monstros / NPCs
+2) sendmsg - realiza envio de mensagens ao cliente - mensagens essas que são de texto mesmo. Ele tem um delay entre cada mensagem a ser enviada, permitindo que o cliente possa ler a mensagem
+3) clientlistener - escuta os clientes para criar novas threads. Cada cliente tem uma thread que o escuta e processa suas informações enviadas - processo esse que se encontra quase todo no serverparser.py
+
+
+LICENSE
+
+All images are under a free license, just can't find the license of scenes (copylefted): http://www.lostgarden.com/2006/07/more-free-game-graphics.html
+creatures are from there: http://www.lorestrome.com/pixel_archive/main.htm (this license allows free use for non-commercial only)
+
+Code of this project is licensed under LGPL V.3.
